@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/katiemulholland/source/repos/spinner/Database/Database.csproj": {}
+  },
+  "projects": {
+    "/Users/katiemulholland/source/repos/spinner/Database/Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/katiemulholland/source/repos/spinner/Database/Database.csproj",
+        "projectName": "Database",
+        "projectPath": "/Users/katiemulholland/source/repos/spinner/Database/Database.csproj",
+        "packagesPath": "/Users/katiemulholland/.nuget/packages/",
+        "outputPath": "/Users/katiemulholland/source/repos/spinner/Database/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/katiemulholland/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.113.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

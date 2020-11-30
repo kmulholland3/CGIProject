@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Wheel!</title>
+    <link rel="stylesheet" src="resources/css/index.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+
+        .navbar {
+            background-color: #690000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .navbar li{
+            color: white;
+        }
+
+        body {
+            font-family: Open Sans;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: #690000;
+            background-size: cover;
+
+        }
+
+        .mainbox {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        .mainbox:after {
+            position: absolute;
+            content: '';
+            width: 32px;
+            height: 32px;
+            background: url('arrow-left.png') no-repeat;
+            background-size: 32px;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            overflow: hidden;
+            transition: all ease 5s;
+        }
+
+        span {
+            width: 50%;
+            height: 50%;
+            display: inline-block;
+            position: absolute;
+        }
+
+        .span1 {
+            clip-path: polygon(0 92%, 100% 50%, 0 8%);
+            background-color: #890062;
+            top: 120px;
+            left: 0;
+        }
+
+        .span2 {
+            clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+            background-color: rgb(4, 0, 58);
+            top: 120px;
+            right: 0;
+        }
+
+        .span3 {
+            clip-path: polygon(50% 0, 8% 100%, 92% 100%);
+            background-color: #380089;
+            bottom: 0;
+            left: 120px;
+        }
+
+        .span4 {
+            clip-path: polygon(50% 100%, 92% 0, 8% 0);
+            background-color: #006369;
+            top: 0;
+            left: 120px;
+        }
+
+        .box2 {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-135deg);
+        }
+
+        span b {
+            width: 65px;
+            height: 65px;
+            line-height: 45px;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .spin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-color: #22ffed;
+            color: #fff;
+            box-shadow: 0 5px 20px #000;
+            font-weight: bold;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .spin:active {
+            width: 70px;
+            height: 70px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body onload="getRests()">
+    <script type="text/javascript" src="index.js"></script>
+    <nav class="navbar">
+        <form action="" onsubmit="return false" method="post">
+            <input type="text" name="RestaurantOptions" id="RestaurantOptions">
+            <input type="submit" value="Submit" onclick="postRest()">
+        </form>
+        <div id="restaurants">
+
+        </div>
+    </nav>
+    <div class="mainbox">
+        <div id="box" class="box">
+            <div class="box1">
+                <span id="rest1" class="span1"><b>1</b></span>
+                <span class="span2"><b>2</b></span>
+                <span class="span3"><b>3</b></span>
+                <span class="span4"><b>4</b></span>
+            </div>
+            <div class="box2">
+                <span class="span1"><b>5</b></span>
+                <span class="span2"><b>6</b></span>
+                <span class="span3"><b>7</b></span>
+                <span class="span4"><b>8</b></span>
+            </div>
+        </div>
+        <button class="spin" onclick="spinFunction()">SPIN</button>
+    </div>
+
+
+
+    <script>
+        function spinFunction()
+        {
+            var x = 1024;
+            var y = 9999;
+
+            var deg = Math.floor(Math.random() * (x - y)) + y;
+
+            document.getElementById('box').style.transform = "rotate(" + deg + "deg)";
+        }
+    </script>
+</body>
+
+</html>
